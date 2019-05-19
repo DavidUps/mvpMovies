@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.davidups.moviemvp.R;
 import com.davidups.moviemvp.login.LoginContract;
+import com.davidups.moviemvp.movie.BillboardFragment;
 import com.davidups.moviemvp.user.User;
 
 import butterknife.BindView;
@@ -30,7 +31,7 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
     @BindView(R.id.pbLoader)
     ProgressBar pbLoader;
 
-    private RegisterContract.Presenter registerContract;
+    private RegisterContract.Presenter registerPresenter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        registerContract = new RegisterPresenter(this);
+        registerPresenter = new RegisterPresenter(this);
         ButterKnife.bind(this, view);
 
         initLayout();
@@ -61,16 +62,17 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
             @Override
             public void onClick(View v) {
                 User user = new User(etEmail.getText().toString(), etPassword.getText().toString());
-                if (registerContract.isValidForm(user)) {
-                    registerContract.attemptRegistry(user);
+                if (registerPresenter.isValidForm(user)) {
+                    registerPresenter.attemptRegistry(user);
                 }
             }
         });
     }
 
     @Override
-    public void onNavigatorHome() {
-        getActivity().finish();
+    public void onDestroy() {
+        super.onDestroy();
+        registerPresenter.onDestroid();
     }
 
     @Override
@@ -99,6 +101,11 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
         etEmail.setEnabled(enabled);
         etPassword.setEnabled(enabled);
         btnRegistry.setEnabled(enabled);
+    }
+
+    @Override
+    public void openBillboardFragment() {
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.clMaster, new BillboardFragment()).addToBackStack("billboardFragment");
     }
 
     private void showMessage(String error) {

@@ -5,13 +5,12 @@ import com.davidups.moviemvp.user.User;
 public interface RegisterContract {
 
     interface View{
-        void onNavigatorHome();
         void displayEmailError(String error);
         void displayPasswordError(String error);
         void displayRegistryError(String error);
         void displayLoadder(boolean loader);
         void setEnabledView(boolean enabled);
-        //void openMainFragment();
+        void openBillboardFragment();
     }
 
     interface Presenter{

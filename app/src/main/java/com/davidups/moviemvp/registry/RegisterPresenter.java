@@ -48,7 +48,7 @@ public class RegisterPresenter implements RegisterContract.Presenter, RegisterCo
         if (view != null){
             view.setEnabledView(true);
             view.displayLoadder(false);
-            view.onNavigatorHome();
+            view.openBillboardFragment();
         }
     }
 

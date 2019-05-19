@@ -48,7 +48,7 @@ public class LoginPresenter implements LoginContract.Presenter, LoginContract.Co
         if (view != null){
             view.setEnabledView(true);
             view.displayLoadder(false);
-            //view.onNavigatorHome();
+            view.openBillboardFragment();
         }
     }
 
