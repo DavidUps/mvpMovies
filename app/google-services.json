@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "615682927245",
+    "firebase_url": "https://moviemvp-4e9ae.firebaseio.com",
+    "project_id": "moviemvp-4e9ae",
+    "storage_bucket": "moviemvp-4e9ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615682927245:android:5c30d24a1a87a45d",
+        "android_client_info": {
+          "package_name": "com.davidups.moviemvp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615682927245-js6p11vspdqagn0kklbo9utm34tdhp0o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuSBl3SP0VhUZVWLVcsZzKDREJwQ5R5H8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615682927245-js6p11vspdqagn0kklbo9utm34tdhp0o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
