@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import com.davidups.moviemvp.MainActivity;
 import com.davidups.moviemvp.R;
-import com.davidups.moviemvp.movie.BillboardFragment;
 import com.davidups.moviemvp.registry.RegisterFragment;
 import com.davidups.moviemvp.user.User;
 
@@ -108,8 +107,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
 
     @Override
     public void openBillboardFragment() {
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.clMaster, new BillboardFragment()).addToBackStack("billboardFragment").commit();
-
+        ((MainActivity) getActivity()).openMovieActivity();
     }
 
     @Override

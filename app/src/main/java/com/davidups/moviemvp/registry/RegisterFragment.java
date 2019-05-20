@@ -12,9 +12,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.davidups.moviemvp.MainActivity;
 import com.davidups.moviemvp.R;
-import com.davidups.moviemvp.login.LoginContract;
-import com.davidups.moviemvp.movie.BillboardFragment;
 import com.davidups.moviemvp.user.User;
 
 import butterknife.BindView;
@@ -105,7 +104,7 @@ public class RegisterFragment extends Fragment implements RegisterContract.View 
 
     @Override
     public void openBillboardFragment() {
-        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.clMaster, new BillboardFragment()).addToBackStack("billboardFragment");
+        ((MainActivity) getActivity()).openMovieActivity();
     }
 
     private void showMessage(String error) {
